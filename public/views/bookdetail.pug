@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+    .detail-container
+        .detail-card
+            h3= book.book_name 
+            p Pages: #{book.pages}
+            p Year: #{book.book_year}
+            p Author: #{book.first_name} #{book.second_name}
+            p Genre: #{book.genre}
+            p Availability: #{book.availability}

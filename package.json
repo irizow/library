@@ -1,12 +1,13 @@
 {
   "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
     "express": "^4.19.2",
     "express-generator": "^4.16.1",
-    "cookie-parser": "~1.4.4",
-      "debug": "~2.6.9",
-      "http-errors": "~1.6.3",
-      "morgan": "~1.9.1",
-      "pug": "2.0.0-beta11"
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql": "^2.18.1",
+    "pug": "2.0.0-beta11"
   },
   "scripts": {
     "start": "node index.js"

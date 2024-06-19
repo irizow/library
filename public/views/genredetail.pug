@@ -1,0 +1,7 @@
+extends layout 
+
+block content 
+    h1= genre.genre 
+    .books-div
+        each book in books
+            a(href=`/books/${book.book_id}`) #{book.book_name}

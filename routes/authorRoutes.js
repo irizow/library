@@ -1,6 +1,10 @@
 const express = require('express')
 const router = express.Router();
 const authorController = require('../controllers/authorController.js')
+const forms = require('../controllers/formsController.js')
+
+router.route('/add')
+    .get(forms.authors)
 
 router.route('/')
     .get(authorController.read) 

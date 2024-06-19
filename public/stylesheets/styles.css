@@ -1,0 +1,106 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+
+.nav {
+    min-height: 100vh;
+    min-width: 15%;
+    background-color: rgb(203, 203, 255);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav hr {
+    width: 85%;
+    border: 1px solid black;
+}
+
+.box2 {
+    min-width: 80%;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layout {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.books-div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.book-div {
+    min-width: 12rem;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    
+}
+
+.book-div a {
+    color: blue;
+}
+
+.detail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-card {
+    padding: 2rem 5rem;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.form {
+    background-color: white;
+    border-radius: 25px;
+    min-width: 40%;
+    padding: 20px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.green {
+    color: green;
+}
+
+.yellow {
+    color: rgb(255, 217, 0);
+}
+
+.red {
+    color: red;
+}
+
+.index-box {
+    margin-top: 30px;
+    display: flex;
+    padding: 20px;
+    background-color: white;
+    flex-direction: column;
+    border-radius: 25px;
+}
+

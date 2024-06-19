@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    h1 Add a new instance
+    form.form(action="/instances" method="POST")
+
+        label(for='selectedbook') Select a book: 
+        select#availbooks(name='selectedbook' required)
+            option(value='') Select a book
+            each book in books
+                option(value=book.book_id) #{book.book_name} - #{book.first_name} #{book.second_name}
+
+        label(for="availability") Status: 
+        select#instance(name="availability" required)
+            option(value='') Select a status
+                option(value='Available') Available 
+                option(value='Loaned') Loaned
+                option(value='Maintenance') Maintenance
+
+
+
+
+        button(type="submit") Add Instance

@@ -1,0 +1,8 @@
+extends layout 
+
+block content 
+    .books-div
+         h3 #{author.first_name} #{author.second_name}
+            each book in books
+                p
+                    a(href=`/books/${book.book_id}`) #{book.book_name}

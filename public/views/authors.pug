@@ -1,0 +1,7 @@
+extends layout 
+
+block content 
+    h1 Authors 
+    .books-div
+        each author in info
+            a(href=`/authors/${author.author_id}`) #{author.first_name} #{author.second_name}

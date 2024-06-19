@@ -1,0 +1,33 @@
+extends layout
+
+block content
+    h1 Add a new book
+    form.form(action="/books" method="POST")
+        label(for="title") Title: 
+        input#title(type="text" name="title" required)
+
+        label(for="author") Author:
+        select#author(name="author" required)
+            option(value="") Select author:
+            each author in authors
+                option(value=author.author_id) #{author.first_name} #{ author.second_name}
+
+        label(for="year") Year:
+        input#pages(type="number" name="year" required)
+
+        label(for="pages") Number of pages:
+        input#pages(type="number" name="pages" required)
+
+
+
+        label(for="genre") Genre:
+        select#genre(name="genre" required)
+            option(value="") Select genre
+            each genre in genres
+                option(value=genre.genre_id) #{genre.genre}
+            
+
+        button(type="submit") Add Book
+
+
+

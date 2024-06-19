@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1 Add a new author
+    form.form(action="/authors" method="POST")
+        label(for="firstname") First Name: 
+        input#firstname(type="text" name="firstname" required)
+
+        label(for="secondname") Second Name: 
+        input#secondname(type="text" name="secondname" required)
+
+
+
+        button(type="submit") Add Author
+

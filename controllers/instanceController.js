@@ -1,21 +1,20 @@
 const db = require('../db')
 
-class BookController {
+class BookInstanceController {
     constructor() {
 
     }
 
     read(req, res) {
-        console.log("reading jjj")
         try {
-            db.query(`SELECT * FROM books
+            db.query(`SELECT book_name, book_id, availability, first_name, second_name FROM books
                                 JOIN authors ON books.author_id = authors.author_id`, 
                 (err, rows) => {
                     if(err) {
                         res.status(400).send(err);
                     }
                     console.log("internal reading" + rows)
-                    res.render('books', {info: rows})
+                    res.render('instances', {books: rows})
                 }
         );
 
@@ -25,35 +24,15 @@ class BookController {
         }
     }
 
-    readDetail(req, res) {
-        const { id } = req.params
-        const query = `SELECT * FROM books 
-                            JOIN authors ON books.author_id = authors.author_id
-                            JOIN genres ON books.genre_id = genres.genre_id
-                             WHERE book_id = ${id}`
-        try {
-            db.query(query,
-                (err, rows) => {
-                    if(err) {
-                        res.status(400).send(err)
-                    }
-                    res.render('bookdetail', { book: rows[0]})
-                }
-            )
-            
-        }
-        catch(err) {
-            res.status(500).send(err)
-        }
-    }
 
     create(req, res) {
-        const { title, year, pages, author, genre } = req.body;
-        const query = `INSERT INTO books (book_name, book_year, pages, author_id, genre_id)
-                VALUES (?, ?, ?, ?, ?)`
+        const { selectedbook, availability } = req.body;
+        const query = `UPDATE books 
+                        SET availability = '${availability}'
+                        WHERE book_id = ${selectedbook}`
         console.log("creating");
         try {
-            db.query(query, [ title, year, pages, author, genre ],
+            db.query(query,
                 (err, rows) => {
                     if(err) {
                         res.status(400).send(err);
@@ -65,7 +44,7 @@ class BookController {
                           <title>Update Successful</title>
                         </head>
                         <body>
-                          <p>New book added successfully</p>
+                          <p>New instance added successfully</p>
                           <script>
                             setTimeout(() => {
                               window.location.href = '/';
@@ -74,7 +53,6 @@ class BookController {
                         </body>
                         </html>
                       `);
-                 
                 })
 
         }
@@ -92,4 +70,4 @@ class BookController {
     }
 }
 
-module.exports = new BookController();
+module.exports = new BookInstanceController();

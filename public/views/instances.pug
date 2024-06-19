@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+    .books-div
+        each book in books
+            .book-div
+                a(href=`/books/${book_id}`)= book.book_name 
+                p #{book.first_name} #{book.second_name}
+                if book.availability === 'Available'
+                    p.green #{book.availability}
+                else if book.availability === 'Loaned'
+                    p.yellow #{book.availability}
+                else if book.availability === 'Maintenance'
+                    p.red #{book.availability}
